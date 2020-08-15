@@ -7,10 +7,17 @@ using OpenQA.Selenium.Firefox;
 
 namespace BrowserControl
 {
+    
     class Program
     {
+
+        
         static void Main(string[] args)
         {
+            string mySearch1;
+
+            Console.WriteLine("What Would You Like To Search For?");
+            mySearch1 = Console.ReadLine();
 
             // in the terminal run: dotnet run
             //"dotnet run" will open the chrome browswer and run the program. 
@@ -22,8 +29,8 @@ namespace BrowserControl
             // Console.WriteLine(driver.Title);
             IWebElement textbox = driver.FindElement(By.Name("q"));
             IWebElement fftextbox = ffDriver.FindElement(By.Name("q"));
-            textbox.SendKeys("Bushido");
-            fftextbox.SendKeys("Ninja Turtles");
+            textbox.SendKeys(mySearch1);
+            fftextbox.SendKeys(mySearch1);
             textbox.Submit();
             fftextbox.Submit();
             // Console.WriteLine(driver.Title);
